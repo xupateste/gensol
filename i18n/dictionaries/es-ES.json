@@ -1,0 +1,302 @@
+{
+  "common": {
+    "error": "Error",
+    "email": "Email",
+    "password": "Contraseña",
+    "total": "Total",
+    "featured": "Destacado",
+    "categories": "Categorías",
+    "noImage": "Sin foto",
+    "add": "Agregar",
+    "goBack": "Volver",
+    "help": "Ayuda",
+    "home": "Inicio",
+    "exit": "Salir",
+    "count": "Cantidad",
+    "products": "Productos",
+    "comments": "Comentarios",
+    "shop": "Tienda",
+    "options": "Opciones",
+    "next": "Siguiente",
+    "item": "Item",
+    "item_plural": "Items"
+  },
+  "landing": {
+    "features": {
+      "streamlineBusinessManagment":{
+        "title": "Agiliza la gestión de tu negocio",
+        "description": "Optimiza tus recursos simplificando la manera de recibir los pedidos."
+      },
+      "endAbusiveCommissions":{
+        "title": "No más comisiones abusivas",
+        "description": "Olvídate de los intermediarios y las comisiones por venta. Ofrece un mejor precio con tu tienda independiente."
+      },
+      "talkClientWithoutIntermediaries": {
+        "title": "Habla con tus clientes sin intermediarios",
+        "description": "Brinda un mejor servicio y atención gracias a la comunicación directa."
+      },
+      "avoidCrowdsPremises":{
+        "title": "Controla el aforo en tu tienda",
+        "description": "Reduce los tiempos de espera y líbrate de las filas innecesarias en tu tienda física tomando pedidos online."
+      }
+    },
+    "footer": {
+      "twitter": "Siguenos en Twitter",
+      "facebook": "Siguenos en Facebook",
+      "instagram": "Siguenos en Instagram",
+      "whatsapp": "Escribenos en Whatsapp",
+      "termsConditions": "Términos y condiciones",
+      "privacyPolicies": "Políticas de privacidad"
+    },
+    "header": {
+      "saveTimeMoney":"Tu tienda 100% gratis con Pency",
+      "publishCatalogOnline": "Publica tu catálogo online y recibe por Whatsapp los pedidos de tus clientes sin comisiones.",
+      "createStore": "Crear tienda",
+      "seeDemo": "Ver demo"
+    },
+    "navBar": {
+      "supportByWhatsapp": "Soporte",
+      "createStore": "Crear tienda"
+    },
+    "directory": {
+      "title": "¡Sumate a nuestras más de 1000 tiendas abiertas!",
+      "subtitle": "Conoce la comunidad de tiendas Pency",
+      "noResults": "No se encontraron resultados",
+      "footer": {
+        "withLocation": "Se muestran resultados dentro de los 5 KM de tu ubicación.",
+        "withoutLocation": "Se muestran todas las tiendas que posean la información relevante cargada.",
+        "seeAll": "Ver todas.",
+        "seeNear": "Ver cercanas."
+      }
+    },
+    "previews": {
+      "versatileForAllBusinesses": {
+        "title": "Para todo tipo de negocios",
+        "description":"Independientemente del sector, tu tienda Pency se ajusta a ti y tus productos, además de ofrecer una experiencia de compra simple y agradable a tus clientes."
+      }
+    },
+    "shout": {
+      "createOnlineStore": "Crea gratis tu tienda online y potencia la gestión de tu negocio",
+      "createStore": "Crear tienda",
+      "seeDemo": "Ver demo"
+    },
+    "callToAction": {
+      "createStore": "Crear tienda",
+      "seeDemo": "Ver demo"
+    },
+    "testimonial": {
+      "userName":"Francisco Bellocchio",
+      "message": "\"Pency apareció en el momento justo como una herramienta para ayudar a nuestra marca a potenciar la venta on line y llegar a nuestros clientes de manera simple y segura.\"",
+      "ownerOf": "Dueño de Blondies"
+    }
+  },
+  "cartItemDrawer":{
+    "comments": {
+      "label": "Comentarios",
+      "help": "Máximo 140 caracteres",
+      "placeholder": "Me gustaría que..."
+    },
+    "share": {
+      "prompt": {
+        "status": "success",
+        "title": "Bien!",
+        "description": "El enlace fue compartido correctamente"
+      },
+      "clipboard": {
+        "status": "success",
+        "title": "Link copiado",
+        "description": "El link se copió al portapapeles",
+        "error": {
+          "status": "warning",
+          "title": "No se pudo copiar el link",
+          "description": "No se tienen permisos para acceder al portapapeles en este navegador"
+        }
+      }
+    }
+  },
+  "form": {
+    "required": "Este campo es requerido",
+    "invalidEmail": "No es un email válido"
+  },
+  "filters": {
+    "search": "Buscar..."
+  },
+  "admin": {
+    "preview": "Ver tienda",
+    "empty": "No se encontraron productos",
+    "home":{
+      "introduction": {
+        "title": "Hola",
+        "blurb": "Comenzar a utilizar una nueva herramienta nunca es fácil, por eso lo hicimos bien simple. Seguí estos pasos y en unos minutos tendrás tu tienda lista para compartir."
+      },
+      "contact": {
+        "title": "Si necesitas ayuda, escribinos:"
+      },
+      "challenges": {
+        "title": "Comenzá con estos desafíos:",
+        "first": {
+          "title": "Completá la info de tu negocio",
+          "description": "Nombre de tu negocio, rubro, una descripción y número de whatsapp."
+        },
+        "second": {
+          "title": "Personalizá tu tienda",
+          "description": "Subí tu logo, una imagen de cabecera y elegí el color de tu tienda."
+        },
+        "third": {
+          "title": "Cargá tus productos",
+          "description": "Cargá tus productos y empezá a vender ya!"
+        }
+      },
+      "assets": {
+        "title": "Imprimí y comparti tu código QR",
+        "footer": "Escaneando este código tus clientes podrán acceder a tu tienda."
+      },
+      "tiers": {
+        "free": {
+          "name": "Emprendedor",
+          "features": {
+            "update": "A las 00:00 (UTC) de cada día.",
+            "products": "100."
+          }
+        },
+        "preferential": {
+          "name": "Preferencial",
+          "features": {
+            "update": "Cada hora.",
+            "products": "150."
+          }
+        },
+        "commercial": {
+          "name": "Comercial",
+          "features": {
+            "update": "Tiempo real.",
+            "products": "Sin límite."
+          }
+        }
+      }
+    }
+  },
+  "cart": {
+    "yourOrder": "Mi pedido",
+    "completeOrder": "Completa tu pedido",
+    "completeOnWhatsApp": "Completar pedido en WhatsApp",
+    "estimatedTotal": "Total estimado"
+  },
+  "products": {
+    "empty": "No se encontraron productos",
+    "review": "-> Mi pedido",
+    "variants": {
+      "countError": "Debes seleccionar {{count}} opciones",
+      "emptyError": "Debes seleccionar al menos una opción"
+    },
+    "footer": {
+      "lastUpdate": "Última actualización",
+      "nextUpdate": "Próxima actualización",
+      "createdWith": "Tienda creada con"
+    }
+  },
+  "auth": {
+    "resetPasswordForm": {
+      "resetError": "Hubo un error al reiniciar la contraseña, intenta de nuevo mas tarde",
+      "title": "Restablece tu contraseña",
+      "description": "Ingresa tu mail y te enviaremos intrucciones sobre como restrablecerla.",
+      "sendInstructions": "Enviar instrucciones"
+    },
+    "resetPasswordSuccess": {
+      "title": "Listo! Te enviamos las instrucciones",
+      "description": "Recibiras un mail que tiene un link para restablecer tu contraseña. Si no aparece en algunos minutos, revisa la carpeta spam.",
+      "contactUsAt": "En caso que tengas algún problema en el proceso escribimos a",
+      "emailTitle": "Consulta por Pency"
+    },
+    "login": {
+      "signInError": "Hubo un error al iniciar sesión, verifica las credenciales",
+      "recoverPassword": "Recuperar contraseña",
+      "signIn": "Acceder"
+    }
+  },
+  "catalogs": {
+    "categories": {
+        "vehicle-accessories": "Accesorios para vehículos",
+        "warehouse-kiosc": "Almacén / Kiosco",
+        "art-handicrafts": "Arte / Artesanías",
+        "baby-articles": "Artículos para bebés",
+        "pet-articles": "Artículos para mascotas",
+        "self-service-market": "Autoservicio / Minimercado",
+        "bar": "Bar",
+        "beauty-self-care": "Belleza y cuidado personal",
+        "bike-shop": "Bicicletería y Motos",
+        "foot-wear": "Calzado",
+        "butcher-shop": "Carnicería",
+        "carpentry": "Carpintería",
+        "health-center": "Centro de salud",
+        "locksmith": "Cerrajería",
+        "breweries": "Cervecería",
+        "chocolate-shop": "Chocolatería",
+        "fast-food": "Comida rápida",
+        "dealership": "Concesionaria",
+        "cooperative": "Cooperativa",
+        "cotillon": "Cotillón",
+        "delivery": "Delivery",
+        "dietetics": "Dietética",
+        "home-appliances": "Electrodomésticos",
+        "learn-center": "Establecimiento educativo",
+        "parking-log": "Estacionamiento",
+        "pasta-factory": "Fábrica de pastas",
+        "hardware-store": "Ferretería",
+        "freight": "Flete",
+        "mechanical-workshop": "Gomería / Taller mecánico",
+        "ice-cream-shop": "Heladería",
+        "construction": "Herramientas y construcción",
+        "blacksmithing-carpentry": "Herrería y carpintería",
+        "hypermarket-wholesale": "Hipermercado / Mayorista",
+        "home-decoration": "Hogar y decoración",
+        "illumination": "Iluminación",
+        "printing": "Imprenta",
+        "computing": "Informática",
+        "real-state": "Inmobiliaria",
+        "musical-instruments": "Instrumentos musicales",
+        "gardening": "Jardinería",
+        "jewelry-watches": "Joyería y relojería",
+        "toys": "Juegos y juguetes",
+        "car-laundry": "Lavadero de autos",
+        "bookshop": "Librería",
+        "lubrication-center": "Lubricentro",
+        "vending-machines": "Máquinas expendedoras",
+        "leather-goods": "Marroquinería, cueros y pieles",
+        "furniture": "Mueblería",
+        "optic": "Óptica",
+        "event-organization": "Organización de eventos",
+        "ong": "Organización sin fines de lucro",
+        "bakery": "Panadería",
+        "hairdressing": "Peluquería",
+        "perfumery": "Perfumería",
+        "fishing-camping": "Pesca y camping",
+        "fish-shop": "Pescadería",
+        "paint-shop": "Pinturería",
+        "restaurant": "Restaurante",
+        "clothes-accessories": "Ropa y accesorios",
+        "health-pharmacy": "Salud / Farmacia",
+        "design-advertising-service": "Servicio de diseño y publicidad",
+        "photography": "Servicio de fotografía",
+        "electronic-repair": "Servicio de reparación de articulos electrónicos",
+        "computing-service": "Servicio informático",
+        "courier-service": "Servicios de mensajerías",
+        "health-service": "Servicios de salud",
+        "home-service": "Servicios para el hogar",
+        "professional-service": "Servicios profesionales",
+        "supermarket": "Supermercado",
+        "theater": "Teatro",
+        "phone-electronic": "Telefonía y electrónica",
+        "dry-cleaner": "Tintorerías y lavadero",
+        "passenger-transport": "Transporte de pasajeros",
+        "auto-parts": "Venta de autopartes y talleres",
+        "farm-products": "Venta de productos de granja",
+        "greengrocery": "Verdulería",
+        "vet": "Veterinaria",
+        "travel-tourism": "Viajes y turismo",
+        "wines": "Vinoteca",
+        "flower-shop": "Vivero / Florería",
+        "other": "Otro"
+    }
+  }
+}
