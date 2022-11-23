@@ -86,7 +86,7 @@ const chat = ({}) => {
         </Box>
         <Stack mt={-6} alignItems="center" textAlign="center">
           <Text as="h1" color="black" fontSize="4xl" fontWeight="bold" lineHeight="90%">
-            {"Lizeth Tellez"}
+            {"Lizeth Téllez"}
           </Text>
           <Text color="gray.700" fontSize="lg" fontWeight="bold" lineHeight="80%" zIndex={2}>
             {"ADMINISTRADORA"}
