@@ -49,4 +49,4 @@ yarn-error.log*
 
 
 # credentials
-/firebase/credentials.ts*
+#/firebase/credentials.ts*
