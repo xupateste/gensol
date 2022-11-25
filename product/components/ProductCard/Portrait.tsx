@@ -91,32 +91,21 @@ const PortraitProductCard: React.FC<Props> = ({isRaised = false, product, onClic
         >
           {title}
         </Text>
-        {/*type === "available" &&(
+        {type === "available" &&(
           <Stack isInline alignItems="center">
-            <Text color="green.500" fontSize="lg" fontWeight={600} lineHeight={1}>
+            <Text color="green.500" fontSize="md" fontWeight={600} lineHeight={1}>
               {p(price)}
             </Text>
           </Stack>
-        )*/}
-        {/*type === "promotional" && */(
+        )}
+        {type === "promotional" && (
           <Stack isInline alignItems="center">
-            <Text color="green.500" fontSize="lg" fontWeight={600} lineHeight={1}>
+            <Text color="green.500" fontSize="md" fontWeight={600} lineHeight={1}>
               {p(price)}
             </Text>
-            {numPiezas > 1 && (
-              <Box display="inline-block" verticalAlign="sub" ml={1}>
-                <Text display="block" color="gray.500" fontSize={10} lineHeight={1} mt="-8px">
-                  {"CADA PIEZA"}
-                </Text>
-                <Text color="gray.500" fontSize="md" lineHeight={1} textDecoration="line-through">
-                  {p(originalPrice)}
-                </Text>
-              </Box>)
-            ||
-              <Text color="gray.500" fontSize="md" lineHeight={1} textDecoration="line-through">
-                {p(originalPrice)}
-              </Text>
-            }
+            <Text color="gray.500" fontSize="sm" lineHeight={1} textDecoration="line-through">
+              {p(originalPrice)}
+            </Text>
           </Stack>
         )}
         {/*type === "unavailable" && (
