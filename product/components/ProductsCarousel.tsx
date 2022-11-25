@@ -8,7 +8,7 @@ interface Props extends StackProps {
 const ProductsCarousel: React.FC<Props> = ({children, title, ...props}) => (
   <Stack spacing={{base: 4, sm: 5}} {...props}>
     {title && (
-      <Text as="h2" fontSize={{base: "xl", sm: "2xl"}} fontWeight={500}>
+      <Text as="h2" fontSize={{base: "xl", sm: "2xl"}} fontWeight={900}>
         {title}
       </Text>
     )}
