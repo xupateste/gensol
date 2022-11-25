@@ -41,7 +41,7 @@ const StoreLayout: React.FC<Props> = ({tenant, product, category, children}) => 
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
         rel="stylesheet"
       />
-      <title>{/*tenant.title || category */ !product ? "Tu Distribuidor Ferretero de Confianza - FERRISUR" : "Tu Distribuidor Ferretero de Confianza - FERRISUR - " + product.code + " " + product.title}</title>
+      <title>{tenant.title || META.title}</title>
       <meta content={tenant.color || META.theme} name="theme-color" />
       <meta content={tenant.description || META.description} name="description" />
       <meta content={tenant.keywords + " "+ category|| META.keywords} name="keywords" />
@@ -123,7 +123,7 @@ const StoreLayout: React.FC<Props> = ({tenant, product, category, children}) => 
           <meta content={`${META.url}/${tenant.slug}`} property="og:url" />
           <meta content="website" property="og:type" />
           <meta
-            content={tenant.title ? `Ferrisur | ${tenant.title}` : META.title}
+            content={tenant.title ? `Gensol | ${tenant.title}` : META.title}
             property="og:title"
           />
           <meta content={tenant.description || META.description} property="og:description" />
