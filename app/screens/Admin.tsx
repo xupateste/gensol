@@ -8,7 +8,6 @@ import {
   TabPanel,
   Flex,
   Stack,
-  Image,
   Button,
   Link,
   Text,
@@ -40,7 +39,7 @@ const AdminScreen: React.FC = () => {
         <Content paddingX={4}>
           <Flex alignItems="center" justifyContent="space-between" width="100%">
             <Stack isInline alignItems="center" spacing={2}>
-              <Image alt="Ferrisur" src="/logo.svg" />
+              <Text fontSize={30} fontWeight={900}>ADMIN</Text>
               <Link
                 _hover={{
                   textDecoration: "none",
@@ -118,7 +117,7 @@ const AdminScreen: React.FC = () => {
                 </Tab>
                 <Tab fontSize="md" fontWeight={500}>
                   <CheckIcon marginRight={2} />
-                  <Text>{"Ordenes"}</Text>
+                  <Text>{t("admin.orders")}</Text>
                 </Tab>
               </TabList>
             </Box>

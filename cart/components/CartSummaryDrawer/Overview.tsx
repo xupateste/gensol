@@ -17,7 +17,7 @@ import Button from "~/ui/controls/Button";
 import {useTranslation, usePrice} from "~/i18n/hooks";
 import {getCount, getTotal, getFormattedPrice} from "~/cart/selectors";
 
-import {formatPrice} from "~/i18n/selectors";
+//import {formatPrice} from "~/i18n/selectors";
 import Stepper from "~/ui/inputs/Stepper";
 import {getVariantsString} from "~/product/selectors";
 import CrossIcon from "~/ui/icons/Cross";
@@ -92,27 +92,6 @@ const Overview: React.FC<Props> = ({
 
   return (
     <>
-      {(total < 500 &&
-              <Flex alignItems="center" fontSize="sm" fontWeight={500} justifyContent="space-between" backgroundColor="#ffe164">
-                <Text textAlign="center" m="auto">Tip: Invierte {formatPrice(500 - total)} más y obtén 2% Dcto.</Text>
-              </Flex>)
-          || (total < 1500 &&
-              <Flex alignItems="center" fontSize="sm" fontWeight={500} justifyContent="space-between" backgroundColor="#ff9852">
-                <Text textAlign="center" m="auto">2do Tip: Invierte {formatPrice(1500 - total)} más y obtén 3% Dcto. 🤝</Text>
-              </Flex>)
-          || (total < 3200 &&
-              <Flex alignItems="center" fontSize="sm" fontWeight={500} justifyContent="space-between" backgroundColor="#ff9852">
-                <Text textAlign="center" m="auto">3er Tip: Invierte {formatPrice(3200 - total)} más y obtén 4% Dcto. 💪</Text>
-              </Flex>)
-          || (total < 6000 &&
-              <Flex alignItems="center" fontSize="sm" fontWeight={500} justifyContent="space-between" backgroundColor="#ff9852">
-                <Text textAlign="center" m="auto">4to Tip: Invierte {formatPrice(6000 - total)} más y obtén 5% Dcto. 🙌</Text>
-              </Flex>)
-          ||
-              <Flex alignItems="center" fontSize="sm" fontWeight={500} justifyContent="space-between" backgroundColor="#ff9852">
-                <Text textAlign="center" m="auto">¡Felicitaciones! ya tienes 5% de Dcto. 🎁</Text>
-              </Flex>
-          }
       <DrawerBody>
         <CrossIcon
           background="white"
@@ -191,22 +170,20 @@ const Overview: React.FC<Props> = ({
             <Text>{p(total)}</Text>
           </Flex>
           {hasNextStep ? (
-            <>
-              <Button boxShadow="lg" size="lg" variantColor="primary" onClick={handleNext}>
-                ➡ {t("common.next")} ➡
-              </Button>
-              <Button size='xs' marginTop={2} onClick={handleOnOpenDialog} fontSize="sm" color="gray.500" bg=''>
-                <TrashIcon
-                  color="gray.500"
-                  cursor="pointer"
-                  marginRight={1}
-                />
-                Vaciar "Mi pedido ({count})"
-              </Button>
-          </>
+            <Button boxShadow="lg" size="lg" variantColor="primary" onClick={handleNext}>
+              ➡ {t("common.next")} ➡
+            </Button>
           ) : (
             <CheckoutButton isLoading={isLoading} onClick={handleSubmit} />
           )}
+          <Button size='xs' marginTop={0} onClick={handleOnOpenDialog} fontSize="sm" color="gray.500" bg=''>
+            <TrashIcon
+              color="gray.500"
+              cursor="pointer"
+              marginRight={1}
+            />
+            Clear "My order ({count})"
+          </Button>
         </Stack>
       </DrawerFooter>
       <AlertDialog
@@ -218,17 +195,17 @@ const Overview: React.FC<Props> = ({
         <AlertDialogOverlay zIndex={8000}/>
 
         <AlertDialogContent zIndex={8001}>
-          <AlertDialogHeader>Vaciar "Mi pedido ({count})"?</AlertDialogHeader>
+          <AlertDialogHeader>Clear "My order ({count})"?</AlertDialogHeader>
           <AlertDialogCloseButton />
           <AlertDialogBody>
-            Deseas quitar todos los productos?<br/>{count} productos serán eliminados
+            {count} products will be removed
           </AlertDialogBody>
           <AlertDialogFooter>
             <Button onClick={onCloseReportModal}>
-              Cancelar
+              Cancel
             </Button>
             <Button background='#E53E3E' _hover={{ bg: '#E53E3E' }} color='white' onClick={handleOnRemoveAll} ml={3}>
-              Vaciar
+              Clear
             </Button>
           </AlertDialogFooter>
         </AlertDialogContent>

@@ -60,10 +60,6 @@ const ProductRow: React.FC<Props> = ({onEdit, onRemove, ...product}) => {
             <Text fontWeight="500" marginLeft={2}>{product.code? product.code : ""}</Text>
             <Text fontWeight="500" marginLeft={2}>{product.title}</Text>
           </Box>
-          <Box flex={1}>
-            <Text fontWeight="500" marginLeft={2}>{product.featured ? "D." : ""} {product.lastStock ? "US." : ""} {product.type==="unavailable" ? "OUT" : ""}</Text>
-            <Text fontWeight="500" marginLeft={2}>{product.priceOff ? "%" : ""} {product.isnew ? "N." : ""} {product.isPreOrder ? "PV." : ""}</Text>
-          </Box>
         </Flex>
       </Box>
       <Box as="td" display={{base: "none", md: "table-cell"}} width="220px">

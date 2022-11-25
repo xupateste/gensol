@@ -1,12 +1,12 @@
 import React from "react";
-import {useForm, Controller, FormContext, FieldError} from "react-hook-form";
+import {useForm, Controller, FormContext} from "react-hook-form";
 import {Stack, Divider} from "@chakra-ui/core";
 
 import {Product} from "../types";
-import ProductVariantsInput, {
+/*import ProductVariantsInput, {
   validator as ProductVariantsInputValidator,
   info as ProductVariantsInputInfo,
-} from "../inputs/ProductVariantsInput";
+} from "../inputs/ProductVariantsInput";*/
 import ProductTypeInput, {info as ProductTypeInputInfo} from "../inputs/ProductTypeInput";
 
 import Input from "~/ui/inputs/Input";
@@ -136,96 +136,24 @@ const ProductForm: React.FC<Props> = ({defaultValues, children, onSubmit, catego
                   />
                 </FormControl>
                 {values.type === "promotional" && (
-                  <>
-                    <FormControl
-                      isRequired
-                      error={errors.numPiezas && "Este valor es requerido"}
-                      flex={1}
-                      help="Presentacion"
-                      label="#Piezas"
-                      name="numPiezas"
-                    >
-                      <Price
-                        ref={register({required: true})}
-                        name="numPiezas"
-                        placeholder="150"
-                        rounded="md"
-                      />
-                    </FormControl>
-                    <FormControl
-                      isRequired
-                      error={errors.originalPrice && "Este valor es requerido"}
-                      flex={1}
-                      help="Precio Venta al Publico"
-                      label="Precio PVP"
+                  <FormControl
+                    isRequired
+                    error={errors.originalPrice && "Este valor es requerido"}
+                    flex={1}
+                    help="Valor sin promocion"
+                    label="Precio original"
+                    name="originalPrice"
+                  >
+                    <Price
+                      ref={register({required: true})}
                       name="originalPrice"
-                    >
-                      <Price
-                        ref={register({required: true})}
-                        name="originalPrice"
-                        placeholder="150"
-                        rounded="md"
-                      />
-                    </FormControl>
-                  </>
+                      placeholder="150"
+                      rounded="md"
+                    />
+                  </FormControl>
                 )}
               </Stack>
             )}
-            <Divider />
-            <Stack isInline spacing={2}>
-              <FormControl
-                error={errors.priceOff && "Este campo es requerido"}
-                flex={1}
-                help="Se mostrará % Dcto."
-                label="Precio Anterior"
-                name="priceOff"
-              >
-                <Price
-                  ref={register({required: true})}
-                  name="priceOff"
-                  placeholder="200"
-                  rounded="md"
-                />
-              </FormControl>
-              <FormControl
-                error={errors.lastStock && "Este campo es requerido"}
-                flex={1}
-                help="Cantidad Restante"
-                label="Ultimo Stock"
-                name="lastStock"
-              >
-                <Input
-                  ref={register({required: true})}
-                  name="lastStock"
-                  placeholder="30"
-                  rounded="md"
-                />
-              </FormControl>
-            </Stack>
-            <Stack isInline spacing={10}>
-              <FormControl error={errors.isnew?.message} name="isnew">
-                <Controller
-                  as={SwitchInput}
-                  color="primary"
-                  control={control}
-                  defaultValue={false}
-                  display="block"
-                  label="Nuevo Ingreso"
-                  name="isnew"
-                />
-              </FormControl>
-              <FormControl error={errors.isPreOrder?.message} name="isPreOrder">
-                <Controller
-                  as={SwitchInput}
-                  color="primary"
-                  control={control}
-                  defaultValue={false}
-                  display="block"
-                  label="Pre-Venta"
-                  name="isPreOrder"
-                />
-              </FormControl>
-            </Stack>
             <Divider />
             <FormControl
               isRequired
@@ -259,7 +187,7 @@ const ProductForm: React.FC<Props> = ({defaultValues, children, onSubmit, catego
                 name="featured"
               />
             </FormControl>
-            <Divider />
+            {/*<Divider />
             <FormControl info={<ProductVariantsInputInfo />} label="Variantes" name="options">
               <Controller
                 as={ProductVariantsInput}
@@ -271,7 +199,7 @@ const ProductForm: React.FC<Props> = ({defaultValues, children, onSubmit, catego
                   validate: ProductVariantsInputValidator,
                 }}
               />
-            </FormControl>
+            </FormControl>*/}
           </Stack>
         </form>
       </FormContext>

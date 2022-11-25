@@ -14,14 +14,14 @@ const TextFieldInput: React.FC<Props> = ({value, field, onChange}) => {
   return (
     <FormControl help={field.note} isRequired={field.required} label={field.title} width="100%">
       <Input
-        maxLength={4}
+        maxLength={50}
         paddingX={0}
-        size="lg" fontSize="3xl" 
+        size="lg" fontSize="2xl" 
         roundedRight={0}
         value={value || ""}
-        placeholder='Ej.Q2R1' 
+        placeholder='' 
         variant="flushed"
-        onChange={(event) => onChange(event.target.value.toUpperCase() || "")}
+        onChange={(event) => onChange(event.target.value || "")}
       />
     </FormControl>
   );

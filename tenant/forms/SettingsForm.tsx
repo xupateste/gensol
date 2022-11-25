@@ -14,7 +14,7 @@ import ColorRadio from "~/ui/inputs/ColorRadio";
 import ImageInput from "~/ui/inputs/Image";
 import FormControl from "~/ui/form/FormControl";
 import MPConnect from "~/payment/inputs/MPConnect";
-import PlaceInput from "~/ui/inputs/Place";
+//import PlaceInput from "~/ui/inputs/Place";
 import {COUNTRIES} from "~/i18n/constants";
 import {useTranslation} from "~/i18n/hooks";
 import PixelInput, {
@@ -56,13 +56,13 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
         <Stack spacing={8}>
           <Stack spacing={4}>
             <Text fontSize="2xl" fontWeight={500} id="basic">
-              Información básica
+              {t("admin.shop.basicInformation.title")}
             </Text>
             <FormControl
               isRequired
-              error={errors.title && "Este campo es requerido y tiene un máximo de 70 caracteres"}
-              help="Solo el nombre, sin slogan"
-              label="Nombre de tu negocio"
+              error={errors.title && t("admin.shop.basicInformation.businessNameError")}
+              help={t("admin.shop.basicInformation.businessNameHelp")}
+              label={t("admin.shop.basicInformation.businessName")}
               name="title"
             >
               <Input
@@ -70,12 +70,12 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
                 defaultValue=""
                 maxLength={70}
                 name="title"
-                placeholder="Pastelerías Pency"
+                placeholder="Al's Patisseries"
               />
             </FormControl>
             <FormControl
-              error={errors.description && "Máximo 140 caracteres"}
-              label="Descripción"
+              error={errors.description && t("admin.shop.basicInformation.descriptionError")}
+              label={t("admin.shop.basicInformation.description")}
               name="description"
             >
               <Textarea
@@ -83,13 +83,13 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
                 defaultValue=""
                 maxLength={140}
                 name="description"
-                placeholder="Somos una tienda de venta de pastelería, pedidos de lunes a viernes de 9 a 18"
+                placeholder={t("admin.shop.basicInformation.descriptionPlaceholder")}
               />
             </FormControl>
             <FormControl
-              error={errors.highlight && "Máximo 140 caracteres"}
-              help="Mostrado debajo de la descripción"
-              label="Mensaje destacado"
+              error={errors.highlight && t("admin.shop.basicInformation.highlightError")}
+              help={t("admin.shop.basicInformation.highlightHelp")}
+              label={t("admin.shop.basicInformation.highlight")}
               name="highlight"
             >
               <Input
@@ -97,13 +97,13 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
                 defaultValue=""
                 maxLength={140}
                 name="highlight"
-                placeholder="Solo se despacharán pedidos hechos de lunes a viernes entre las 9 y las 18 horas"
+                placeholder={t("admin.shop.basicInformation.highlightPlaceholder")}
               />
             </FormControl>
             <FormControl
               isRequired
-              error={errors.phone && (errors.phone.message || "Este campo es inválido")}
-              help="Código país + código de area + teléfono. Ej: 5491173694572"
+              error={errors.phone && (errors.phone.message || t("admin.shop.basicInformation.whatsappError"))}
+              help={t("admin.shop.basicInformation.whatsappHelp")}
               isInvalid={Boolean(errors.phone)}
               label="WhatsApp"
               name="phone"
@@ -119,16 +119,16 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
             </FormControl>
             <FormControl
               isRequired
-              error={errors.category && "Este campo es requerido"}
-              help="Ayudá a tus clientes a encontrar más rápido tus productos"
-              label="Rubro al que pertenecés"
+              error={errors.category && t("admin.shop.basicInformation.categoryError")}
+              help={t("admin.shop.basicInformation.categoryHelp")}
+              label={t("admin.shop.basicInformation.category")}
               name="category"
             >
               <Select
                 ref={register({required: true})}
                 defaultValue=""
                 name="category"
-                placeholder="Seleccioná un rubro"
+                placeholder={t("admin.shop.basicInformation.categoryPlaceholder")}
               >
                 {CATEGORIES.map((value) => (
                   <option key={value} value={value}>
@@ -137,26 +137,26 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
                 ))}
               </Select>
             </FormControl>
-            <FormControl help="Separadas por comas" label="Palabras clave" name="keywords">
+            <FormControl help={t("admin.shop.basicInformation.keywordsHelp")} label={t("admin.shop.basicInformation.keywords")} name="keywords">
               <Input
                 ref={register}
                 defaultValue=""
                 name="keywords"
-                placeholder="delivery, pasteleria, cupcakes"
+                placeholder={t("admin.shop.basicInformation.keywordsPlaceholder")}
               />
             </FormControl>
             <FormControl
               isRequired
-              error={errors.country && "Este campo es requerido"}
-              help="Ayudá a tus clientes a encontrar más rápido tus productos"
-              label="País"
+              error={errors.country && t("admin.shop.basicInformation.countryError")}
+              help={t("admin.shop.basicInformation.countryHelp")}
+              label={t("admin.shop.basicInformation.country")}
               name="country"
             >
               <Select
                 ref={register({required: true})}
                 defaultValue=""
                 name="country"
-                placeholder="Seleccioná un país"
+                placeholder={t("admin.shop.basicInformation.countryPlaceholder")}
               >
                 {Object.entries(COUNTRIES).map(([code, name]) => (
                   <option key={code} value={code}>
@@ -166,17 +166,22 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
               </Select>
             </FormControl>
             <FormControl
-              help="Ayudá a tus clientes a encontrar tu local"
-              label="Dirección"
-              name="location"
+              help={t("admin.shop.basicInformation.addressHelp")}
+              label={t("admin.shop.basicInformation.address")}
+              name="place"
             >
-			   <Controller
-                as={PlaceInput}
-                control={control}
-                country={defaultValues.country}
-                defaultValue={null}
-                name="location"
-                placeholder="Av. Eduardo Madero 470"
+			       <Input
+                ref={register}
+                defaultValue=""
+                name="place"
+                placeholder={t("admin.shop.basicInformation.addressPlaceholder")}
+              />
+              <Input
+                ref={register}
+                defaultValue=""
+                name="placeUrl"
+                mt={2}
+                placeholder={"URL: https://goo.gl/maps/..."}
               />
             </FormControl>
           </Stack>
@@ -184,9 +189,9 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
           <Stack spacing={4}>
             <Stack spacing={1}>
               <Text fontSize="2xl" fontWeight={500} id="customization">
-                Personalización
+                {t("admin.shop.personalize.title")}
               </Text>
-              <Text color="gray.600">Dale a tu tienda tu estilo</Text>
+              <Text color="gray.600">{t("admin.shop.personalize.span")}</Text>
             </Stack>
             <FormControl label="Logo" name="logo">
               <Controller
@@ -198,8 +203,8 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
               />
             </FormControl>
             <FormControl
-              help="Tamaño recomendado 1200 x 630"
-              label="Imágen de cabecera"
+              help={t("admin.shop.personalize.bannerHelp")}
+              label={t("admin.shop.personalize.banner")}
               name="banner"
             >
               <Controller
@@ -214,8 +219,8 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
             </FormControl>
             <FormControl
               isRequired
-              error={errors.color && "Este campo es inválido"}
-              label="Color principal"
+              error={errors.color && t("admin.shop.personalize.colorError")}
+              label={t("admin.shop.personalize.color")}
             >
               <Controller
                 as={ColorRadio}
@@ -227,9 +232,9 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
             </FormControl>
             <FormControl
               isRequired
-              error={errors.layout && "Este campo es requerido"}
-              help="El diseño horizontal es recomendado cuando tenés muchos productos"
-              label="Diseño"
+              error={errors.layout && t("admin.shop.personalize.layoutError")}
+              help={t("admin.shop.personalize.layoutHelp")}
+              label={t("admin.shop.personalize.layout")}
               name="layout"
             >
               <Controller
@@ -243,55 +248,55 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
           <Divider />
           <Stack spacing={4}>
             <Text fontSize="2xl" fontWeight={500} id="social">
-              Redes sociales
+              {t("admin.shop.socialNetworks.title")}
             </Text>
             <FormControl
               error={errors.instagram?.message}
-              label="Usuario de Instagram"
+              label={t("admin.shop.socialNetworks.insta")}
               name="instagram"
             >
               <Input
                 ref={register({
                   validate: (value) =>
-                    value.includes("instagram.com")
-                      ? "Solo el usuario, no el link completo"
-                      : value.includes("@")
-                      ? "No debe contener el arroba, solo el usuario"
+                    value.includes("instagram.com") 
+                      ? String(t("admin.shop.socialNetworks.instaOnlyUser")) 
+                      : value.includes("@") 
+                      ? String(t("admin.shop.socialNetworks.instaNotAt")) 
                       : true,
                 })}
                 defaultValue=""
                 name="instagram"
-                placeholder="pencyapp"
+                placeholder={t("admin.shop.socialNetworks.userPlaceholder")}
               />
             </FormControl>
             <FormControl
               error={errors.facebook?.message}
-              label="Página de Facebook"
+              label={t("admin.shop.socialNetworks.fb")}
               name="facebook"
             >
               <Input
                 ref={register({
                   validate: (value) =>
-                    value.includes("facebook.com") ? "Solo el usuario, no el link completo" : true,
+                    value.includes("facebook.com") ? String(t("admin.shop.socialNetworks.fbOnlyUser")) : true,
                 })}
                 defaultValue=""
                 name="facebook"
-                placeholder="pencyapp"
+                placeholder={t("admin.shop.socialNetworks.userPlaceholder")}
               />
             </FormControl>
-            <FormControl error={errors.twitter?.message} label="Usuario de Twitter" name="twitter">
+            <FormControl error={errors.twitter?.message} label={t("admin.shop.socialNetworks.twt")} name="twitter">
               <Input
                 ref={register({
                   validate: (value) =>
                     value.includes("twitter.com")
-                      ? "Solo el usuario, no el link completo"
+                      ? String(t("admin.shop.socialNetworks.twtOnlyUser"))
                       : value.includes("@")
-                      ? "No debe contener el arroba, solo el usuario"
+                      ? String(t("admin.shop.socialNetworks.twtNotAt"))
                       : true,
                 })}
                 defaultValue=""
                 name="twitter"
-                placeholder="pencyapp"
+                placeholder={t("admin.shop.socialNetworks.userPlaceholder")}
               />
             </FormControl>
           </Stack>
@@ -299,11 +304,10 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
           <Stack spacing={4}>
             <Stack spacing={1}>
               <Text fontSize="2xl" fontWeight={500} id="fields">
-                Campos adicionales
+                {t("admin.shop.additionalFields.title")}
               </Text>
               <Text color="gray.600">
-                Solicitale a tus clientes más información antes de realizar el pedido. Por ejemplo:
-                Forma de pago.
+                {t("admin.shop.additionalFields.span")}
               </Text>
             </Stack>
             <FormControl name="fields">
@@ -347,15 +351,15 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
           <Stack marginTop={8} spacing={4}>
             <Stack spacing={1}>
               <Text fontSize="2xl" fontWeight={500} id="advanced">
-                Opciones avanzadas
+                {t("admin.shop.advancedOptions.title")}
               </Text>
-              <Text color="gray.600">Llevá tu negocio a otro nivel</Text>
+              <Text color="gray.600">{t("admin.shop.advancedOptions.span")}</Text>
             </Stack>
             <FormControl
               error={errors.pixel?.message}
-              help="Solo el ID del pixel"
+              help={t("admin.shop.advancedOptions.fbHelp")}
               info={<PixelInputInfo />}
-              label="Pixel de Facebook"
+              label={t("admin.shop.advancedOptions.fb")}
               name="pixel"
             >
               <PixelInput
@@ -367,9 +371,9 @@ const SettingsForm: React.FC<Props> = ({defaultValues = {}, children, onSubmit})
             </FormControl>
             <FormControl
               error={errors.ga?.message}
-              help="Solo el ID del Google Analytics"
+              help={t("admin.shop.advancedOptions.gaHelp")}
               info={<GoogleAnalyticsInputInfo />}
-              label="Código de seguimiento de Google Analytics"
+              label={t("admin.shop.advancedOptions.ga")}
               name="ga"
             >
               <GoogleAnalyticsInput

@@ -4,6 +4,8 @@ import {Flex, Stack, Box, Link} from "@chakra-ui/core";
 import {ClientTenant} from "../types";
 import SettingsForm from "../forms/SettingsForm";
 import {useTenant, useTenantActions} from "../hooks";
+import {useTranslation} from "~/i18n/hooks";
+
 
 import Button from "~/ui/controls/Button";
 import Content from "~/ui/structure/Content";
@@ -11,6 +13,7 @@ import Content from "~/ui/structure/Content";
 const AdminScreen: React.FC = () => {
   const tenant = useTenant();
   const {update} = useTenantActions();
+  const t = useTranslation();
 
   function handleUpdate(tenant: ClientTenant) {
     return update(tenant);
@@ -29,7 +32,7 @@ const AdminScreen: React.FC = () => {
               role="button"
               whiteSpace="nowrap"
             >
-              Información básica
+              {t("admin.shop.basicInformation.title")}
             </Link>
             <Link
               _hover={{color: "primary.500"}}
@@ -38,7 +41,7 @@ const AdminScreen: React.FC = () => {
               href="#customization"
               role="button"
             >
-              Personalización
+              {t("admin.shop.personalize.title")}
             </Link>
             <Link
               _hover={{color: "primary.500"}}
@@ -48,7 +51,7 @@ const AdminScreen: React.FC = () => {
               role="button"
               whiteSpace="nowrap"
             >
-              Redes sociales
+              {t("admin.shop.socialNetworks.title")}
             </Link>
             <Link
               _hover={{color: "primary.500"}}
@@ -58,7 +61,7 @@ const AdminScreen: React.FC = () => {
               role="button"
               whiteSpace="nowrap"
             >
-              Campos adicionales
+              {t("admin.shop.additionalFields.title")}
             </Link>
             {tenant.flags?.includes("mercadopago") && (
               <Link
@@ -80,7 +83,7 @@ const AdminScreen: React.FC = () => {
               role="button"
               whiteSpace="nowrap"
             >
-              Opciones avanzadas
+              {t("admin.shop.advancedOptions.title")}
             </Link>
           </Stack>
         </Content>
@@ -101,7 +104,7 @@ const AdminScreen: React.FC = () => {
                     width={{base: "100%", sm: "auto"}}
                     onClick={submit}
                   >
-                    Guardar
+                    {t("admin.save")}
                   </Button>
                 </Stack>
               </Flex>

@@ -1,5 +1,5 @@
 import React from "react";
-import {IDrawer, Text, Stack, Flex, Box, SimpleGrid, Grid} from "@chakra-ui/core";
+import {IDrawer, Text, Stack, Flex, Box, SimpleGrid} from "@chakra-ui/core";
 
 import SummaryButton from "../SummaryButton";
 
@@ -9,7 +9,7 @@ import ProductVariantForm from "~/product/forms/ProductVariantForm";
 import ArrowLeftIcon from "~/ui/icons/ArrowLeft";
 import Stepper from "~/ui/inputs/Stepper";
 import FormLabel from "~/ui/form/FormLabel";
-//import TruncatedText from "~/ui/feedback/ToggleableText";
+import TruncatedText from "~/ui/feedback/ToggleableText";
 import ToggleableImage from "~/ui/feedback/ToggleableImage";
 import {useTranslation} from "~/i18n/hooks";
 import {useToast} from "~/hooks/toast";
@@ -18,7 +18,6 @@ import {useAnalytics} from "~/analytics/hooks";
 import Textarea from "~/ui/inputs/Textarea";
 import FormControl from "~/ui/form/FormControl";
 import {useTenant} from "~/tenant/hooks";
-import Link from "~/ui/controls/Link";
 import Button from "~/ui/controls/Button";
 import {usePrice} from "~/i18n/hooks";
 
@@ -208,59 +207,18 @@ const CartItemDrawer: React.FC<Props> = ({onClose, product, onSubmit, ...props})
                                 {`${p(product.originalPrice)}`}
                               </Text>
                           }
-                          
-                          {product.lastStock && (
-                                  <Box float="right">
-                                    <Text px={2} bg="#00aaf3" color="#fff" fontWeight="bold" fontSize="md" fontStyle="italic">¡ULTIMO STOCK!</Text>
-                                    <Text px={2} bg="#0073bf" color="#fff" fontWeight="bold" fontSize="xs" fontStyle="italic" float="right">{product.lastStock} PIEZAS</Text>
-                                  </Box>)
-                            ||  product.priceOff && (
-                                  <Box float="right">
-                                    <Text px={2} bg="#d90000" color="#fff200" fontWeight="bold" fontSize="lg" fontStyle="italic">-{(100*(product.priceOff-product.price)/product.priceOff) | 0 }% Dcto</Text>
-                                    <Text px={2} bg="#d90000" color="#fff" fontWeight="bold" fontSize="xs" fontStyle="italic" float="right">Antes {p(product.priceOff)}</Text>
-                                  </Box>)
-                            ||  product.isnew && (
-                                  <Flex float="right" px={2} bg="#d90000" color="#fff" fontWeight="bold" fontSize="lg" fontStyle="italic">¡NUEVO!</Flex>) 
-                            ||  product.isPreOrder && (
-                                  <Flex float="right" px={2} bg="#ffe600" color="#013d81" fontWeight="bold" fontSize="lg" fontStyle="italic">PRE-VENTA</Flex>)
-                          }
                         </Box>
-                        <Flex>
-                          {(product.numPiezas > 1 && 
-                              <Box borderWidth='2px' borderRadius='sm' borderColor='black' px={4} py='1px' mt="-9px" fontWeight={600}>
-                                {`USTED GANA... ${p(product.originalPrice - (product.price / product.numPiezas))} Por Pieza`}
-                              </Box>)
-                            || 
-                              <Box borderWidth='2px' borderRadius='sm' borderColor='black' px={4} py='1px' mt="-9px" fontWeight={600}>
-                                {`USTED GANA... ${p(product.originalPrice - product.price)}`}
-                              </Box>
-                          }
-                          
-                        </Flex>
                         <Text
                           color="gray.500"
                           fontSize="md"
                           whiteSpace="pre-line"
                         >
-                          {`Ref: ${product.code}`}
+                          {`Code: ${product.code}`}
                         </Text>
-                        <Grid marginTop={2} marginBottom={4} templateColumns='3fr 2fr' borderWidth={1} borderColor='gray.300'>
-                          <Box bg='gray.100' isTruncated padding={2} fontWeight='bold' borderBottomWidth={1} borderColor='gray.300'>Volumen de compra</Box>
-                          <Box bg='gray.100' isTruncated padding={2} fontWeight='bold' borderBottomWidth={1} borderLeftWidth={1} borderColor='gray.300'>Ahorro</Box>
-                          <Box bg='white' isTruncated padding={2} borderBottomWidth={1} borderColor='gray.300'>Invierte S/500 (o más)</Box>
-                          <Box bg='white' isTruncated padding={2} borderBottomWidth={1} borderLeftWidth={1} borderColor='gray.300' color='#fd0000'>2% de descuento</Box>
-                          <Box bg='white' isTruncated padding={2} borderBottomWidth={1} borderColor='gray.300'>Invierte S/1500 (o más)</Box>
-                          <Box bg='white' isTruncated padding={2} borderBottomWidth={1} borderLeftWidth={1} borderColor='gray.300' color='#fd0000'>3% de descuento</Box>
-                          <Box bg='white' isTruncated padding={2} borderBottomWidth={1} borderColor='gray.300'>Invierte S/3200 (o más)</Box>
-                          <Box bg='white' isTruncated padding={2} borderBottomWidth={1} borderLeftWidth={1} borderColor='gray.300' color='#fd0000'>4% de descuento</Box>
-                          <Box bg='white' isTruncated padding={2}>Invierte S/6000 (o más)</Box>
-                          <Box bg='white' isTruncated padding={2} borderLeftWidth={1} borderColor='gray.300' color='#fd0000'>5% de descuento</Box>
-                        </Grid> 
                       </Stack>
                     )}
                     {product.type === "unavailable" && (
                       <Stack>
-                        <Box w="fit-content" float="right" px={2} bg="black" color="white" fontWeight="bold" fontSize="sm" fontStyle="italic">PRODUCTO SIN STOCK</Box>
                         <Text
                           backgroundColor= "#ebf8ff"
                           borderWidth="1px"
@@ -268,17 +226,19 @@ const CartItemDrawer: React.FC<Props> = ({onClose, product, onSubmit, ...props})
                           whiteSpace="pre-line"
                           p={3}
                         >
-                          Este producto se agotó rápidamente<br/>
-                          <Link
-                            isExternal
-                            fontWeight={900}
-                            href={`https://wa.me/51935687208?text=${encodeURIComponent('Hola! Quisiera saber si traerán nuevamente el producto: '+product.title+' ('+product.code+')')}`}
-                            lineHeight="normal"
-                          >
-                            👉 Consultar Disponibilidad
-                          </Link>
+                          OUT OF STOCK
                         </Text>
                       </Stack>
+                    )}
+                    {product.description && (
+                      <TruncatedText
+                        color="gray.500"
+                        fontSize="md"
+                        limit={280}
+                        whiteSpace="pre-line"
+                      >
+                        {product.description}
+                      </TruncatedText>
                     )}
                   </Stack>
                   {product.options?.length ? form : null}

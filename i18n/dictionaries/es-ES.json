@@ -122,8 +122,85 @@
     "search": "Buscar..."
   },
   "admin": {
+    "save" : "Guardar",
+    "orders": "Ordenes",
     "preview": "Ver tienda",
     "empty": "No se encontraron productos",
+    "shop": {
+      "basicInformation" : {
+        "title" : "Información básica",
+        "businessName" : "Nombre de tu negocio",
+        "businessNameHelp" : "Solo el nombre, no el slogan",
+        "businessNameError" : "Este campo es obligatorio y tiene un máximo de 70 caracteres",
+        "description" : "Descripción",
+        "descriptionError" : "Máximo 140 caracteres",      
+        "descriptionPlaceholder" : "Somos una panadería, pedidos de lunes a viernes de 9 a 18 hs.",
+        "highlight" : "Mensaje destacado",
+        "highlightError" : "Máximo 140 caracteres",
+        "highlightHelp" : "Se muestra debajo de la descripción.",
+        "highlightPlaceholder" : "Solo pedidos realizados de lunes a viernes entre las 9 y las 18 horas serán enviados",
+        "whatsappError" : "Este campo es inválido",
+        "whatsappHelp" : "Código de país + código de área + teléfono. Ej: 5491173694572",
+        "category" : "Categoría a la que pertenece",
+        "categoryError" : "Este campo es requerido",
+        "categoryHelp" : "Ayude a sus clientes a encontrar sus productos más rápido",
+        "categoryPlaceholder" : "Selecciona una Categoría",
+        "keywords" : "Palabras Clave",
+        "keywordsHelp" : "Separado por comas",
+        "keywordsPlaceholder" : "delivery, pastelería, cupcakes",
+        "country" : "Pais",
+        "countryError" : "Este campo es requerido",
+        "countryHelp" : "Ayude a sus clientes a encontrar sus productos más rápido",
+        "countryPlaceholder" : "Selecciona un Pais",
+        "address" : "Dirección",
+        "addressHelp" : "Ayude a sus clientes a encontrar su Local",
+        "addressPlaceholder" : "Av. Marino 470"
+      },
+      "personalize" : {
+        "title" : "Personalizar",
+        "span" : "Dale a tu tienda tu estilo",
+        "banner" : "Imagen de cabecera",
+        "bannerHelp" : "Tamaño recomendado 1200 x 630",
+        "color" : "Color Principal",
+        "colorError" : "Este campo es inválido",
+        "layout" : "Diseño",
+        "layoutError" : "Este campo es requerido",
+        "layoutHelp" : "El diseño horizontal es recomendado cuando tienes muchos productos"
+      },
+      "socialNetworks" : {
+        "title" : "Redes sociales",
+        "insta" : "Usuario de Instagram",
+        "instaOnlyUser" : "Solo el usuario, no el link completo",
+        "instaNotAt" : "No debe contener el signo de arroba, solo el usuario",
+        "fb" : "Página de Facebook",
+        "fbOnlyUser" : "Solo el usuario, no el link completo",
+        "twt" : "Usuario de Twitter",
+        "twtOnlyUser" : "Solo el usuario, no el link completo",
+        "twtNotAt" : "No debe contener el signo de arroba, solo el usuario",
+        "userPlaceholder" : "TuTienda"
+      },
+      "additionalFields" : {
+        "title" : "Campos adicionales",
+        "span" : "Solicite más información a sus clientes antes de realizar el pedido. Por ejemplo: Forma de pago.",
+        "addField" : "Agregar campo",
+        "addFieldPlaceholder" : "Forma de pago",
+        "addFieldRequired" : "Obligatorio",
+        "addFieldNoTitle" : "[Sin titulo]",
+        "addFieldOptions" : "Opciones",
+        "addFieldToComplete" : "A completar",
+        "addFieldNote" : "Nota",
+        "addFieldNoteHelp" : "Máximo 70 caracteres",
+        "addFieldNotePlaceholder" : "Solo se entrega a zona sur" 
+      },
+      "advancedOptions" : {
+        "title" : "Opciones avanzadas",
+        "span" : "Lleva tu negocio a otro nivel",
+        "fb" : "Pixel de Facebook",
+        "fbHelp" : "Solo el ID Pixel",
+        "ga" : "Código de Seguimiento de Google Analytics",
+        "gaHelp" : "Solo el ID Google Analytics"
+      }
+    },
     "home":{
       "introduction": {
         "title": "Hola",
@@ -184,7 +261,7 @@
   },
   "products": {
     "empty": "No se encontraron productos",
-    "review": "-> Mi pedido",
+    "review": "📝 Mi pedido",
     "variants": {
       "countError": "Debes seleccionar {{count}} opciones",
       "emptyError": "Debes seleccionar al menos una opción"

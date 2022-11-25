@@ -21,6 +21,8 @@ export interface ServerTenant {
   description?: string;
   country?: string;
   location?: Place;
+  place?: string;
+  placeUrl?: string;
   highlight?: string;
   fields?: Field[];
   flags?: string[];

@@ -100,7 +100,6 @@ const CartSummaryDrawer: React.FC<Props> = ({
       {step === "fields" && (
         <Fields
           fields={fields}
-          items={items}
           onClose={handleClose}
           onPrevious={handlePrevious}
           onSubmit={handleCheckoutWithFields}

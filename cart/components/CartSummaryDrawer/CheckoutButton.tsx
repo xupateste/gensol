@@ -3,12 +3,12 @@ import {ButtonProps, Stack, Text} from "@chakra-ui/core";
 
 import Button from "~/ui/controls/Button";
 import WhatsAppIcon from "~/ui/icons/WhatsApp";
-//import {useTranslation} from "~/i18n/hooks";
+import {useTranslation} from "~/i18n/hooks";
 
 interface Props extends Omit<ButtonProps, "children"> {}
 
 const CheckoutButton: React.FC<Props> = ({onClick, ...props}) => {
-  //const t = useTranslation();
+  const t = useTranslation();
 
   return (
     <Button
@@ -23,7 +23,7 @@ const CheckoutButton: React.FC<Props> = ({onClick, ...props}) => {
     >
       <Stack isInline alignItems="center" spacing={2}>
         <WhatsAppIcon height={6} width={6} />
-        <Text>{"Enviar Pedido por WhatsApp"}</Text>
+        <Text>{t("cart.completeOnWhatsApp")}</Text>
       </Stack>
     </Button>
   );

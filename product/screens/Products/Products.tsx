@@ -1,21 +1,21 @@
 import React from "react";
-import {Stack, Box, PseudoBox, Flex, useDisclosure, Text, SimpleGrid } from "@chakra-ui/core";
+import {Stack, Box, PseudoBox, Flex, useDisclosure, Text } from "@chakra-ui/core";
 import BTT from "~/ui/icons/BTT";
 import {useRouter} from "next/router";
 
 import ProductCard from "../../components/ProductCard";
 import {useFilteredProducts, useProducts} from "../../hooks";
 import ProductsGrid from "../../components/ProductsGrid";
-//import ProductsCarousel from "../../components/ProductsCarousel";
+import ProductsCarousel from "../../components/ProductsCarousel";
 
 import Onboarding from "./Onboarding";
 
 //import Logo from "~/ui/static/Logo";
-import Image from "~/ui/feedback/Image";
+//import Image from "~/ui/feedback/Image";
 import {useCart} from "~/cart/hooks";
 import {groupBy} from "~/selectors/group";
 import CartSummaryDrawer from "~/cart/components/CartSummaryDrawer";
-//import {filterBy} from "~/selectors/filter";
+import {filterBy} from "~/selectors/filter";
 import {useTenant} from "~/tenant/hooks";
 import {useTranslation} from "~/i18n/hooks";
 import TenantHeader from "~/tenant/components/TenantHeader";
@@ -43,7 +43,7 @@ const ProductsScreen: React.FC = () => {
     product,
   ]);
 
-  //const featuredProducts = filterBy(products, {featured: true});
+  const featuredProducts = filterBy(products, {featured: true});
   const productsByCategory = groupBy(products, (product) => product.category);
 
   // added
@@ -114,79 +114,6 @@ const ProductsScreen: React.FC = () => {
       {shallow: true},
     );
   }
-  function handleAEClick() {
-    setTimeout(() => {
-      document
-        .querySelector(`[id="ACCESORIOS ELECTRICOS"]`)
-        ?.scrollIntoView()
-      var scrolledY = window.scrollY;
-      if(scrolledY){
-        //window.scroll(0, scrolledY - 60);
-        window.scrollTo({ top: scrolledY - 60, behavior: 'smooth' });
-      }
-    }, 0)
-  }
-  function handleHERRClick() {
-    setTimeout(() => {
-      document
-        .querySelector(`[id="HERRAMIENTAS"]`)
-        ?.scrollIntoView()
-      var scrolledY = window.scrollY;
-      if(scrolledY){
-        //window.scroll(0, scrolledY - 60);
-        window.scrollTo({ top: scrolledY - 60, behavior: 'smooth' });
-      }
-    }, 0)
-  }
-  function handleGATUClick() {
-    setTimeout(() => {
-      document
-        .querySelector(`[id="GASFITERIA Y TUBERIA"]`)
-        ?.scrollIntoView()
-      var scrolledY = window.scrollY;
-      if(scrolledY){
-        //window.scroll(0, scrolledY - 60);
-        window.scrollTo({ top: scrolledY - 60, behavior: 'smooth' });
-      }
-    }, 0)
-  }
-  function handleLIPGClick() {
-    setTimeout(() => {
-      document
-        .querySelector(`[id="LIMPIEZA Y PLAGICIDAS"]`)
-        ?.scrollIntoView()
-      var scrolledY = window.scrollY;
-      if(scrolledY){
-        //window.scroll(0, scrolledY - 60);
-        window.scrollTo({ top: scrolledY - 60, behavior: 'smooth' });
-      }
-    }, 0)
-  }
-  function handleCHAClick() {
-    setTimeout(() => {
-      document
-        .querySelector(`[id="CHAPERIA"]`)
-        ?.scrollIntoView()
-      var scrolledY = window.scrollY;
-      if(scrolledY){
-        //window.scroll(0, scrolledY - 60);
-        window.scrollTo({ top: scrolledY - 60, behavior: 'smooth' });
-      }
-    }, 0)
-  }
-  function handleHEPEClick() {
-    setTimeout(() => {
-      document
-        .querySelector(`[id="HERRERIA Y PERNERIA"]`)
-        ?.scrollIntoView()
-      var scrolledY = window.scrollY;
-      if(scrolledY){
-        //window.scroll(0, scrolledY - 60);
-        window.scrollTo({ top: scrolledY - 60, behavior: 'smooth' });
-      }
-    }, 0)
-  }
-
   return (
     <>
       <Flex direction="column" height="100%">
@@ -196,94 +123,21 @@ const ProductsScreen: React.FC = () => {
             <Box flex={1}>
               {highlight && (
                 <Box
-                  fontSize={{base: "13px", sm: "xs"}}
+                  backgroundColor="primary.50"
+                  color="primary.500"
+                  fontSize={{base: "sm", sm: "md"}}
                   fontWeight="500"
-                  marginTop={0}
+                  marginTop={4}
                   paddingX={4}
                   paddingY={3}
                   roundedTop={{base: 0, sm: "lg"}}
-                  textAlign='center'
+                  textAlign={{base: "left", sm: "center"}}
                 >
-                  {/*highlight*/}
-                  <SimpleGrid columns={[2, 3, 6]} spacing="20px" marginBottom={2}>
-                    <Box h='140px' bg="#ebf8ff" borderWidth="1px" p={3} onClick={handleAEClick}>
-                      <Image fadeIn src={"/assets/ae.png"} h='67%'/>
-                      <Text
-                        textTransform="uppercase"
-                        fontWeight={500}
-                        lineHeight="normal"
-                        marginBottom={1}
-                        marginTop={2}
-                      >
-                        ACCESORIOS ELECTRICOS
-                      </Text>
-                    </Box>
-                    <Box h='140px' bg="#ebf8ff" borderWidth="1px" p={3} onClick={handleHERRClick}>
-                      <Image fadeIn src={"/assets/herr.png"} h='67%'/>
-                      <Text
-                        textTransform="uppercase"
-                        fontWeight={500}
-                        lineHeight="normal"
-                        marginBottom={1}
-                        marginTop={2}
-                      >
-                        HERRAMIENTAS
-                      </Text>
-                    </Box>
-                    <Box h='140px' bg="#ebf8ff" borderWidth="1px" p={3} onClick={handleGATUClick}>
-                      <Image fadeIn src={"/assets/gatu.png"} h='67%'/>
-                      <Text
-                        textTransform="uppercase"
-                        fontWeight={500}
-                        lineHeight="normal"
-                        marginBottom={1}
-                        marginTop={2}
-                      >
-                        GASFITERIA Y TUBERIA
-                      </Text>
-                    </Box>
-                    <Box h='140px' bg="#ebf8ff" borderWidth="1px" p={3} onClick={handleLIPGClick}>
-                      <Image fadeIn src={"/assets/lipg.png"} h='67%'/>
-                      <Text
-                        textTransform="uppercase"
-                        fontWeight={500}
-                        lineHeight="normal"
-                        marginBottom={1}
-                        marginTop={2}
-                      >
-                        LIMPIEZA Y PLAGICIDAS
-                      </Text>
-                    </Box>
-                    <Box h='140px' bg="#ebf8ff" borderWidth="1px" p={3} onClick={handleCHAClick}>
-                      <Image fadeIn src={"/assets/cha.png"} h='67%'/>
-                      <Text
-                        textTransform="uppercase"
-                        fontWeight={500}
-                        lineHeight="normal"
-                        marginBottom={1}
-                        marginTop={2}
-                      >
-                        CHAPERIA
-                      </Text>
-                    </Box>
-                    <Box h='140px' bg="#ebf8ff" borderWidth="1px" p={3} onClick={handleHEPEClick }>
-                      <Image fadeIn src={"/assets/hepe.png"} h='67%'/>
-                      <Text
-                        textTransform="uppercase"
-                        fontWeight={500}
-                        lineHeight="normal"
-                        marginBottom={1}
-                        marginTop={2}
-                      >
-                        HERRERIA Y PERNERIA
-                      </Text>
-                    </Box>
-                  </SimpleGrid>
+                  {highlight}
                 </Box>
               )}
               <Box
-                backgroundColor="#ebf8ff"
-                borderWidth={{base: "0px", sm: "1px"}}
+                backgroundColor="gray.50"
                 data-test-id="filters"
                 marginBottom={{base: 5, sm: 10}}
                 paddingX={4}
@@ -300,9 +154,9 @@ const ProductsScreen: React.FC = () => {
                 <Stack margin="auto" spacing={5} width="100%">
                   {Boolean(products.length) ? (
                     <Stack spacing={{base: 5, sm: 10}} width="100%">
-                      {/*Boolean(featuredProducts.length) && (
-                        <ProductsCarousel title={t("ITEMS POR AGOTARSE")} zIndex={0}>
-                          //{featuredProducts.map((product) => (
+                      {Boolean(featuredProducts.length) && (
+                        <ProductsCarousel title={t("common.featured")} zIndex={0}>
+                          {featuredProducts.map((product) => (
                             <ProductCard
                               key={product.id}
                               isRaised
@@ -313,7 +167,7 @@ const ProductsScreen: React.FC = () => {
                             />
                           ))}
                         </ProductsCarousel>
-                      )*/}
+                      )}
                       {productsByCategory.map(([category, products]) => {
                         return (
                           <PseudoBox key={category} as="section" id={category}>
@@ -383,8 +237,7 @@ const ProductsScreen: React.FC = () => {
           padding={4}
         >  
           <Stack w="100%" alignItems="center" spacing={1}>
-            <Text fontSize="sm">{'Desde 2016, FERRISUR IMPORT SAC'}</Text>
-            <Text fontSize="sm">{'\n'}{'Hecho en Juliaca, Perú por '} <Link href="https://wa.me/51930240108/?text=Hola+Chris!" isExternal>Chris & Liz</Link></Text>
+            <Text fontSize="sm">{'Made by'} <Link fontWeight="bolder" href="https://wa.me/51930240108/?text=Hi+Chris!" isExternal>Chris</Link></Text>
           </Stack>
         </Flex>
       </Content>

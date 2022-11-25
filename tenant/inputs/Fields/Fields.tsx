@@ -16,6 +16,7 @@ import PlusIcon from "~/ui/icons/Plus";
 import SwitchInput from "~/ui/inputs/Switch";
 import ChevronDownIcon from "~/ui/icons/ChevronDown";
 import ChevronUpIcon from "~/ui/icons/ChevronUp";
+import {useTranslation} from "~/i18n/hooks";
 
 interface Props {
   value?: Partial<Field[]>;
@@ -24,6 +25,7 @@ interface Props {
 }
 
 const FieldsInput: React.FC<Props> = ({value = [], error: _error, onChange}) => {
+  const t = useTranslation();
   const [active, setActive] = React.useState(null);
   const error = React.useMemo(() => {
     if (!_error) return null;
@@ -111,7 +113,7 @@ const FieldsInput: React.FC<Props> = ({value = [], error: _error, onChange}) => 
               >
                 <ClearableTextField
                   backgroundColor="inherit"
-                  placeholder="Forma de pago"
+                  placeholder={t("admin.shop.additionalFields.addFieldPlaceholder")}
                   value={option.title}
                   onChange={(event) => handleTitleChange(index, event.target.value)}
                   onClear={() => handleRemove(index)}
@@ -122,7 +124,7 @@ const FieldsInput: React.FC<Props> = ({value = [], error: _error, onChange}) => 
             <FormControl name="required">
               <SwitchInput
                 checked={option.required}
-                label="Obligatorio"
+                label={t("admin.shop.additionalFields.addFieldRequired")}
                 name="required"
                 onChange={(checked) => handleRequiredChange(index, checked)}
               />
@@ -147,7 +149,7 @@ const FieldsInput: React.FC<Props> = ({value = [], error: _error, onChange}) => 
             rightIcon={ChevronDownIcon}
             onClick={() => setActive(index)}
           >
-            {option.title || "[sin título]"}
+            {option.title || t("admin.shop.additionalFields.addFieldNoTitle") }
           </IconButton>
         );
       })}
@@ -157,7 +159,7 @@ const FieldsInput: React.FC<Props> = ({value = [], error: _error, onChange}) => 
         rightIcon={PlusIcon}
         onClick={handleAddField}
       >
-        Agregar campo
+        {t("admin.shop.additionalFields.addField")}
       </IconButton>
     </Stack>
   );

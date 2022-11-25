@@ -204,7 +204,7 @@ const ProductsScreen: React.FC = () => {
                   roundedTop={{base: 0, sm: "lg"}}
                   textAlign='center'
                 >
-                  {/*highlight*/}
+                  {highlight}
                   <SimpleGrid columns={[2, 3, 6]} spacing="20px" marginBottom={2}>
                     <Box h='140px' bg="#ebf8ff" borderWidth="1px" p={3} onClick={handleAEClick}>
                       <Image fadeIn src={"/assets/ae.png"} h='67%'/>

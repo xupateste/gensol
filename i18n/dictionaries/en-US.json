@@ -14,7 +14,7 @@
     "exit": "Exit",
     "count": "Quantity",
     "products": "Products",
-    "comments": "Comentarios",
+    "comments": "Comments",
     "shop": "Shop",
     "options": "Options",
     "next": "Next",
@@ -28,16 +28,16 @@
         "description": "We optimize resources simplifying how you receive orders."
       },
       "endAbusiveCommissions":{
-        "title": "Poné fin a las comisiones abusivas",
-        "description": "Olvidate de los intermediarios y las comisiones por venta. Ofrecé un mejor precio con tu tienda independiente."
+        "title": "End abusive commissions",
+        "description": "Forget about intermediaries and sales commissions. Offer a better price with your independent store."
       },
       "talkClientWithoutIntermediaries": {
-        "title": "Hablá con tus clientes sin intermediarios.",
-        "description": "Brindá un mejor servicio y atención gracias a la comunicación directa."
+        "title": "Talk to your customers without intermediaries.",
+        "description": "Provide better service and attention thanks to direct communication."
       },
       "avoidCrowdsPremises":{
-        "title": "Evitá aglomeraciones en tu local",
-        "description": "Reducí los tiempos de espera y librate de las filas innecesarias vendiendo online."
+        "title": "Avoid crowds in your premises.",
+        "description": "Reduce waiting times and get rid of unnecessary queues by selling online."
       }
     },
     "footer": {
@@ -60,7 +60,7 @@
     },
     "directory": {
       "title": "Join as one of our more than 1000 stores!",
-      "subtitle": "Get to know the Pency stores community near you",
+      "subtitle": "Get to know the stores community near you",
       "noResults": "No results found",
       "footer": {
         "withLocation": "Showing results withing 5 KM of your location.",
@@ -81,8 +81,8 @@
       "seeDemo": "Ver tienda de prueba"
     },
     "callToAction": {
-      "createStore": "Crear tienda",
-      "seeDemo": "Ver demo"
+      "createStore": "Create Store",
+      "seeDemo": "See demo"
     },
     "testimonial": {
       "userName":"Francisco Bellocchio",
@@ -108,8 +108,8 @@
         "description": "Link was copied to the clipboard",
         "error":{
           "status": "warning",
-          "title": "No se pudo copiar el link",
-          "description": "No se tienen permisos para acceder al portapapeles en este navegador"
+          "title": "The link could not be copied",
+          "description": "You do not have permissions to access the clipboard in this browser"
         }
       }
     }
@@ -122,29 +122,106 @@
     "search": "Search..."
   },
   "admin": {
+    "save" : "Save",
+    "orders": "Orders",
     "preview": "Preview",
     "empty": "No products found",
+    "shop": {
+      "basicInformation" : {
+        "title" : "Basic information",
+        "businessName" : "Name of your business",
+        "businessNameHelp" : "Just the name, no slogan",
+        "businessNameError" : "This field is required and has a maximum of 70 characters",
+        "description" : "Description",
+        "descriptionError" : "Maximum 140 characters",      
+        "descriptionPlaceholder" : "We are a bakery shop, orders from Monday to Friday from 9 a.m. to 6 p.m.",
+        "highlight" : "Featured message",
+        "highlightError" : "Maximum 140 characters",
+        "highlightHelp" : "Shown below the description",
+        "highlightPlaceholder" : "Only orders made from Monday to Friday between 9 a.m. and 6 p.m. will be dispatched",
+        "whatsappError" : "This field is invalid",
+        "whatsappHelp" : "Country code + area code + telephone. Ex: 5491173694572",
+        "category" : "Category to which you belong",
+        "categoryError" : "This field is required",
+        "categoryHelp" : "Help your customers find your products faster",
+        "categoryPlaceholder" : "Select a category",
+        "keywords" : "Keywords",
+        "keywordsHelp" : "Separated by commas",
+        "keywordsPlaceholder" : "delivery, pastry, cupcakes",
+        "country" : "Country",
+        "countryError" : "This field is required",
+        "countryHelp" : "Help your customers find your products faster",
+        "countryPlaceholder" : "Select a country",
+        "address" : "Address",
+        "addressHelp" : "Help your customers find your store",
+        "addressPlaceholder" : "Marino Avenue 470"
+      },
+      "personalize" : {
+        "title" : "Personalize",
+        "span" : "Give your store your style",
+        "banner" : "Header image",
+        "bannerHelp" : "Recommended size 1200 x 630",
+        "color" : "Main color",
+        "colorError" : "This field is invalid",
+        "layout" : "Design",
+        "layoutError" : "This field is required",
+        "layoutHelp" : "Horizontal layout is recommended when you have many products"
+      },
+      "socialNetworks" : {
+        "title" : "Social networks",
+        "insta" : "Instagram Username",
+        "instaOnlyUser" : "Only the user, not the full link",
+        "instaNotAt" : "It should not contain the at sign, only the user",
+        "fb" : "Facebook Page",
+        "fbOnlyUser" : "Only the user, not the full link",
+        "twt" : "Twitter Username",
+        "twtOnlyUser" : "Only the user, not the full link",
+        "twtNotAt" : "It should not contain the at sign, only the user",
+        "userPlaceholder" : "YourStore"
+      },
+      "additionalFields" : {
+        "title" : "Additional fields",
+        "span" : "Ask your customers for more information before placing the order. For example: Form of payment.",
+        "addField" : "Add field",
+        "addFieldPlaceholder" : "Form of payment",
+        "addFieldRequired" : "Required",
+        "addFieldNoTitle" : "[No title]",
+        "addFieldOptions" : "Options",
+        "addFieldToComplete" : "To fill out",
+        "addFieldNote" : "Note",
+        "addFieldNoteHelp" : "Maximum 70 characters",
+        "addFieldNotePlaceholder" : "It is only delivered to the south zone"
+      },
+      "advancedOptions" : {
+        "title" : "Advanced options",
+        "span" : "Take your business to another level",
+        "fb" : "Facebook Pixel",
+        "fbHelp" : "Just the pixel ID",
+        "ga" : "Google Analytics Tracking Code",
+        "gaHelp" : "Just the Google Analytics ID"
+      }
+    },
     "home":{
       "introduction": {
-        "title": "Hola",
-        "blurb": "Comenzar a utilizar una nueva herramienta nunca es fácil, por eso lo hicimos bien simple. Seguí estos pasos y en unos minutos tendrás tu tienda lista para compartir."
+        "title": "Hello",
+        "blurb": "Getting started with a new tool is never easy, so we made it really simple. Follow these steps and in a few minutes you will have your store ready to share."
       },
       "contact": {
-        "title": "Si necesitas ayuda, escribinos:"
+        "title": "If you need help, write to us:"
       },
       "challenges": {
-        "title": "Comenzá con estos desafíos:",
+        "title": "Start with these challenges:",
         "first": {
-          "title": "Completá la info de tu negocio",
-          "description": "Nombre de tu negocio, rubro, una descripción y número de whatsapp."
+          "title": "Complete the information of your business",
+          "description": "Name of your business, category, a description and whatsapp number."
         },
         "second": {
-          "title": "Personalizá tu tienda",
-          "description": "Subí tu logo, una imagen de cabecera y elegí el color de tu tienda."
+          "title": "Personalize your store",
+          "description": "Upload your logo, a header image and choose the color of your store."
         },
         "third": {
-          "title": "Cargá tus productos",
-          "description": "Cargá tus productos y empezá a vender ya!"
+          "title": "Upload your products",
+          "description": "Upload your products and start selling now!"
         }
       },
       "assets": {
@@ -177,14 +254,14 @@
     }
   },
   "cart": {
-    "yourOrder": "Your order",
+    "yourOrder": "My order",
     "completeOrder": "Complete your order",
     "completeOnWhatsApp": "Complete order on WhatsApp",
     "estimatedTotal": "Estimated total"
   },
   "products": {
     "empty": "No products found",
-    "review": "Your order",
+    "review": "📝 My order",
     "variants": {
       "countError": "You must select {{count}} options",
       "emptyError": "You must select at least one option"
@@ -216,87 +293,87 @@
   },
   "catalogs": {
     "categories": {
-        "vehicle-accessories": "Accesorios para vehículos",
-        "warehouse-kiosc": "Almacén / Kiosco",
-        "art-handicrafts": "Arte / Artesanías",
-        "baby-articles": "Artículos para bebés",
-        "pet-articles": "Artículos para mascotas",
-        "self-service-market": "Autoservicio / Minimercado",
+        "vehicle-accessories": "Vehicle accessories",
+        "warehouse-kiosc": "Warehouse / Kiosk",
+        "art-handicrafts": "Art / Handicrafts",
+        "baby-articles": "Baby Articles",
+        "pet-articles": "Pet Articles",
+        "self-service-market": "Self Service Market",
         "bar": "Bar",
-        "beauty-self-care": "Belleza y cuidado personal",
-        "bike-shop": "Bicicletería y Motos",
-        "foot-wear": "Calzado",
-        "butcher-shop": "Carnicería",
-        "carpentry": "Carpintería",
-        "health-center": "Centro de salud",
-        "locksmith": "Cerrajería",
-        "breweries": "Cervecería",
-        "chocolate-shop": "Chocolatería",
-        "fast-food": "Comida rápida",
-        "dealership": "Concesionaria",
-        "cooperative": "Cooperativa",
-        "cotillon": "Cotillón",
+        "beauty-self-care": "Beauty / Self Care",
+        "bike-shop": "Bike Shop",
+        "foot-wear": "Foot Wear",
+        "butcher-shop": "Butcher Shop",
+        "carpentry": "Carpentry",
+        "health-center": "Health Center",
+        "locksmith": "Locksmith",
+        "breweries": "Breweries",
+        "chocolate-shop": "Chocolate Shop",
+        "fast-food": "Fast Food",
+        "dealership": "Dealership",
+        "cooperative": "Cooperative",
+        "cotillon": "Cotillon",
         "delivery": "Delivery",
-        "dietetics": "Dietética",
-        "home-appliances": "Electrodomésticos",
-        "learn-center": "Establecimiento educativo",
-        "parking-log": "Estacionamiento",
-        "pasta-factory": "Fábrica de pastas",
-        "hardware-store": "Ferretería",
-        "freight": "Flete",
-        "mechanical-workshop": "Gomería / Taller mecánico",
-        "ice-cream-shop": "Heladería",
-        "construction": "Herramientas y construcción",
-        "blacksmithing-carpentry": "Herrería y carpintería",
-        "hypermarket-wholesale": "Hipermercado / Mayorista",
-        "home-decoration": "Hogar y decoración",
-        "illumination": "Iluminación",
-        "printing": "Imprenta",
-        "computing": "Informática",
-        "real-state": "Inmobiliaria",
-        "musical-instruments": "Instrumentos musicales",
-        "gardening": "Jardinería",
-        "jewelry-watches": "Joyería y relojería",
-        "toys": "Juegos y juguetes",
-        "car-laundry": "Lavadero de autos",
-        "bookshop": "Librería",
-        "lubrication-center": "Lubricentro",
-        "vending-machines": "Máquinas expendedoras",
-        "leather-goods": "Marroquinería, cueros y pieles",
-        "furniture": "Mueblería",
-        "optic": "Óptica",
-        "event-organization": "Organización de eventos",
-        "ong": "Organización sin fines de lucro",
-        "bakery": "Panadería",
-        "hairdressing": "Peluquería",
-        "perfumery": "Perfumería",
-        "fishing-camping": "Pesca y camping",
-        "fish-shop": "Pescadería",
-        "paint-shop": "Pinturería",
-        "restaurant": "Restaurante",
-        "clothes-accessories": "Ropa y accesorios",
-        "health-pharmacy": "Salud / Farmacia",
-        "design-advertising-service": "Servicio de diseño y publicidad",
-        "photography": "Servicio de fotografía",
-        "electronic-repair": "Servicio de reparación de articulos electrónicos",
-        "computing-service": "Servicio informático",
-        "courier-service": "Servicios de mensajerías",
-        "health-service": "Servicios de salud",
-        "home-service": "Servicios para el hogar",
-        "professional-service": "Servicios profesionales",
-        "supermarket": "Supermercado",
-        "theater": "Teatro",
-        "phone-electronic": "Telefonía y electrónica",
-        "dry-cleaner": "Tintorerías y lavadero",
-        "passenger-transport": "Transporte de pasajeros",
-        "auto-parts": "Venta de autopartes y talleres",
-        "farm-products": "Venta de productos de granja",
-        "greengrocery": "Verdulería",
-        "vet": "Veterinaria",
-        "travel-tourism": "Viajes y turismo",
-        "wines": "Vinoteca",
-        "flower-shop": "Vivero / Florería",
-        "other": "Otro"
+        "dietetics": "Dietetics",
+        "home-appliances": "Home Appliances",
+        "learn-center": "Learn Center",
+        "parking-log": "Parking Log",
+        "pasta-factory": "Pasta Factory",
+        "hardware-store": "Hardware Store",
+        "freight": "Freight",
+        "mechanical-workshop": "Mechanical Workshop",
+        "ice-cream-shop": "Ice Cream Shop",
+        "construction": "Construction",
+        "blacksmithing-carpentry": "Blacksmithing / Carpentry",
+        "hypermarket-wholesale": "Hypermarket Wholesale",
+        "home-decoration": "Home Decoration",
+        "illumination": "Illumination",
+        "printing": "Printing",
+        "computing": "Computing",
+        "real-state": "Real State",
+        "musical-instruments": "Musical Instruments",
+        "gardening": "Gardening",
+        "jewelry-watches": "Jewelry / Watches",
+        "toys": "Toys",
+        "car-laundry": "Car Laundry",
+        "bookshop": "Bookshop",
+        "lubrication-center": "Lubrication Center",
+        "vending-machines": "Vending Machines",
+        "leather-goods": "Leather Goods",
+        "furniture": "Furniture",
+        "optic": "Optic",
+        "event-organization": "Event Organization",
+        "ong": "Nonprofit Organization",
+        "bakery": "Bakery",
+        "hairdressing": "Hair Dressing",
+        "perfumery": "Perfumery",
+        "fishing-camping": "Fishing / Camping",
+        "fish-shop": "Fish Shop",
+        "paint-shop": "Paint Shop",
+        "restaurant": "Restaurant",
+        "clothes-accessories": "Clothes / Accessories",
+        "health-pharmacy": "Health / Pharmacy",
+        "design-advertising-service": "Design and Advertising Services",
+        "photography": "Photography",
+        "electronic-repair": "Electronic Repair Service",
+        "computing-service": "Computer Services",
+        "courier-service": "Courier Services",
+        "health-service": "Health Services",
+        "home-service": "Home Services",
+        "professional-service": "Professional Services",
+        "supermarket": "Supermarket",
+        "theater": "Theater",
+        "phone-electronic": "Mobile and Electronics",
+        "dry-cleaner": "Dry Cleaners and Laundry",
+        "passenger-transport": "Passenger Transport",
+        "auto-parts": "Auto Parts and Workshops",
+        "farm-products": "Farm Products",
+        "greengrocery": "Greengrocery",
+        "vet": "Vet",
+        "travel-tourism": "Travel and Tourism",
+        "wines": "Wines",
+        "flower-shop": "Flowers Shop",
+        "other": "Other"
     }
   }
 }

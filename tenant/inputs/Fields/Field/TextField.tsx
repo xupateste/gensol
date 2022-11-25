@@ -6,6 +6,9 @@ import {TextField} from "../../../types";
 import FormControl from "~/ui/form/FormControl";
 import Input from "~/ui/inputs/Input";
 
+import {useTranslation} from "~/i18n/hooks";
+
+
 interface Props {
   value: Partial<TextField>;
   onChange: (value: Partial<TextField>) => void;
@@ -17,6 +20,8 @@ interface Props {
 }
 
 const TextFieldInput: React.FC<Props> = ({value, onChange}) => {
+  const t = useTranslation();
+
   function handleChange(note) {
     onChange(
       produce(value, (value) => {
@@ -26,10 +31,10 @@ const TextFieldInput: React.FC<Props> = ({value, onChange}) => {
   }
 
   return (
-    <FormControl help="Máximo 70 caracteres" label="Nota" width="100%">
+    <FormControl help={t("admin.shop.additionalFields.addFieldNoteHelp")} label={t("admin.shop.additionalFields.addFieldNote")} width="100%">
       <Input
         maxLength={70}
-        placeholder="Solo se entrega a zona sur"
+        placeholder={t("admin.shop.additionalFields.addFieldNotePlaceholder")}
         roundedRight={0}
         value={value.note}
         onChange={(event) => handleChange(event.target.value || "")}

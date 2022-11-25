@@ -35,6 +35,8 @@ const mock = {
             lng: 0,
           },
         },
+        place: "",
+        placeUrl: "",
         keywords: `${faker.commerce.department()}, ${faker.commerce.department()}`,
         fields: [
           {
