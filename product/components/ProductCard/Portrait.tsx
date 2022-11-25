@@ -15,7 +15,7 @@ interface Props extends Omit<FlexProps, "onClick"> {
 
 const PortraitProductCard: React.FC<Props> = ({isRaised = false, product, onClick, ...props}) => {
   const p = usePrice();
-  const {image, title, price, originalPrice, type, numPiezas} = product;
+  const {image, title, price, originalPrice, type} = product;
   //const [min, max] = getVariantsPriceRange(product.options);
 
   function formattedImg(image) {
