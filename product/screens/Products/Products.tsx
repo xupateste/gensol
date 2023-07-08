@@ -171,6 +171,7 @@ const ProductsScreen: React.FC = () => {
                       {productsByCategory.map(([category, products]) => {
                         return (
                           <PseudoBox key={category} as="section" id={category}>
+                            <Text>Avc</Text>
                             <ProductsGrid data-test-id="category" layout={layout} title={category} products={products}>
                               {products.map((product) => (
                                 <ProductCard
